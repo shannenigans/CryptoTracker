@@ -1,0 +1,149 @@
+#title{
+	text-align: center;
+
+}
+
+#crypto{
+	font-size: 200px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#currency{
+	vertical-align: center;
+	background-color: green;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+}
+
+value{
+	display: inline-block;
+	vertical-align: center;
+	color: lime;
+}
+
+#currencydrop{
+	  position: relative;
+    display: inline-block;
+}
+
+#trafficGraph{
+font-size: 20px;
+color: blueviolet;
+}
+
+#twitter{
+	vertical-align: middle;
+	height: 30px;
+	width: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+
+}
+
+#feed{
+	border-style: solid;
+	vertical-align: middle;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+
+}
+
+.medialink{
+	height: 100px;
+	width: 10%;
+	margin-top: 0px;
+	vertical-align: middle;
+	margin-right: 150px;
+}
+
+.mediatag{
+	display: inline-block;
+	margin-top: 30px;
+	margin-right: 150px;
+}
+}
+
+.graph{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+.border{
+	border-bottom-style: ridge;
+	padding: 5px;
+}
+
+.header{
+	font-size: 14px;
+	margin-left: 100px;
+	margin-right: 100px;*/
+	position: relative;
+    display: inline-block;
+}
+
+.logo{
+	vertical-align: middle;
+	width: 230px;
+	height: 266px;
+	margin-top: 0px;
+	margin-left: 110px;
+	margin-right: 50px;
+}
+
+<twit> {
+	display: inline-block;
+	margin-left: 500px;
+	font-size: 24px;
+	text-orientation: center;
+}
+
+
+
+.dropbtn {
+    background-color: lightblue;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    min-width: 95px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: darkgray;
+}
