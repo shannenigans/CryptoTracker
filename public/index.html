@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
-  <base href="/">
+  <base href=".">
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AngularJS Starter App</title>
+  <title>Crypto Chart</title>
   <link rel="stylesheet" href="/css/vendor/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
+  <!-- The below three scripts are for chart generation -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://code.highcharts.com/stock/highstock.js"></script>
   <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
@@ -16,23 +17,23 @@
   <div ng-include src="'partials/header.html'"></div>
   <div ng-view></div>
   <div ng-include src="'partials/footer.html'"></div>
-  <div id="container" style="height: 400px; min-width: 310px"></div>
-  <script src="/js/chart.js"></script>
-  <script src="/js/lib/jquery.js"></script>
-  <script src="/js/lib/bootstrap.js"></script>
-  <script src="/js/lib/angular.js"></script>
-  <script src="/js/lib/angular-route.js"></script>
-  <script src="/js/lib/satellizer.js"></script>
-  <script src="/js/app.js"></script>
-  <script src="/js/controllers/contact.js"></script>
-  <script src="/js/controllers/forgot.js"></script>
-  <script src="/js/controllers/header.js"></script>
-  <script src="/js/controllers/login.js"></script>
-  <script src="/js/controllers/profile.js"></script>
-  <script src="/js/controllers/reset.js"></script>
-  <script src="/js/controllers/signup.js"></script>
-  <script src="/js/services/account.js"></script>
-  <script src="/js/services/contact.js"></script>
+  <div id="container2" style="height: 400px; min-width: 310px"></div>
+  <script src="js/chart.js"></script>
+  <script src="js/lib/jquery.js"></script>
+  <script src="js/lib/bootstrap.js"></script>
+  <script src="js/lib/angular.js"></script>
+  <script src="js/lib/angular-route.js"></script>
+  <script src="js/lib/satellizer.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/contact.js"></script>
+  <script src="js/controllers/forgot.js"></script>
+  <script src="js/controllers/header.js"></script>
+  <script src="js/controllers/login.js"></script>
+  <script src="js/controllers/profile.js"></script>
+  <script src="js/controllers/reset.js"></script>
+  <script src="js/controllers/signup.js"></script>
+  <script src="js/services/account.js"></script>
+  <script src="js/services/contact.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

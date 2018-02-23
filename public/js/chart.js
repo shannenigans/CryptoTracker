@@ -1,5 +1,5 @@
 $(function () { 
-    var myChart = Highcharts.chart('container', {
+    var myChart = Highcharts.chart('container2', {
         chart: {
             type: 'line'
         },
