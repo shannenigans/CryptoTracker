@@ -23,7 +23,8 @@
     "mongoose": "^4.4.8",
     "morgan": "^1.7.0",
     "nodemailer": "^2.3.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "chai": "^3.5.0",
