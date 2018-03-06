@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-  <base href=".">
+  <base href="./">
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crypto Chart</title>
-  <link rel="stylesheet" href="/css/vendor/bootstrap.css">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="./css/vendor/bootstrap.css">
+  <link rel="stylesheet" href="./css/main.css">
   <!-- The below three scripts are for chart generation -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://code.highcharts.com/stock/highstock.js"></script>
@@ -17,8 +17,26 @@
   <div ng-include src="'partials/header.html'"></div>
   <div ng-view></div>
   <div ng-include src="'partials/footer.html'"></div>
+  
+  <div id="crypto" class="btn-group" align="left" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">ETH</button>
+  <button type="button" class="btn btn-secondary" autofocus="autofocus">BTC</button>
+</div>
+<div id="currency" class="btn-group" align="right" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" autofocus="autofocus">USD</button>
+  <button type="button" class="btn btn-secondary">EUR</button>
+</div>
+  
   <div id="container2" style="height: 400px; min-width: 310px"></div>
+  
+  <div id="container3" style="height: 400px; min-width: 310px"></div>
+  
+  <!-- <script src="js/checkIfCssLoaded.js"></script> -->
+  <script type="js/buttonInfo.js"></script> 
+  <!-- <script type="js/generateChart.js"></script> -->
   <script src="js/chart.js"></script>
+  <!--<script src="js/tone.js"></script> -->
+
   <script src="js/lib/jquery.js"></script>
   <script src="js/lib/bootstrap.js"></script>
   <script src="js/lib/angular.js"></script>

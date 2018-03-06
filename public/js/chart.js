@@ -1,31 +1,53 @@
 $(function () { 
-   $.getJSON('https://api.coindesk.com/v1/bpi/historical/close.json?start=2010-07-17&end=2018-03-01', function(resp) {
+   var cryptoSelected = "BTC"
+   var currencySelected = "USD"
+   var convertName = {
+    "US Dollars":"USD",
+    "Euros":"EUR",
+    "Ethereum":"ETH",
+    "Bitcoin":"BTC"
+   };
+   generateChart(cryptoSelected, currencySelected)  // Generate Initial Chart
+
+   $("#currency :input").on('click',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        console.log($(this).text())
+        currencySelected = $(this).text()
+        generateChart(cryptoSelected,currencySelected);
+   });
+   $("#crypto :input").on('click',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        console.log($(this).text())
+        cryptoSelected = $(this).text()
+        generateChart(cryptoSelected,currencySelected);
+        // var crypt = convertName.cryptoSelected;
+        // var curr = convertName.currencySelected;
+        // console.log("Shorthand Currency: " + curr);
+        // console.log("Shorthand Crypto: " + crypt);
+   });
+});
+
+function generateChart(coin, curr) { 
+        $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
         
-        var coinData = resp.bpi;    //holds the values we're interested in from api call
-
-        var dataTimePrice = [];     //holds parsed values, used for graphing
-
-
-    for(var prop in coinData){  //loops through each value, and changes the time to UTC ms
-
-        var pair = {}
-        pair.y = coinData[prop];
-        pair.x = new Date(Date.parse(prop)).getTime()
-
-        dataTimePrice.push(pair);
-    }
-    
+        var coinData = resp.Data;    //holds the values we're interested in from api call
+        console.log(resp.Data);
+        //var dataTimePrice = [];     //holds parsed values, used for graphing
+        
         var myChart = Highcharts.chart('container2', {
         chart: {
-            type: 'line'
+            type: 'candlestick'
         },
         title: {
-            text: 'Bitcoin Prices'
+            text: coin + ' Prices'
         },
         xAxis:{            
             type: 'datetime',
-            minRange: 3600 * 1000 * 24 * 7, // one week
+            //minRange: 3600 * 1000 * 24 * 7, // one week
             gridLineWidth: 1,
+            resize:{
+                enabled: true,
+            }
         },
         yAxis:{
             title:'Price to USD',
@@ -33,13 +55,14 @@ $(function () {
         },
         series: [{
             turboThreshold: 0,
-            name: "BTC",
-            data: dataTimePrice,
-        }]
+            name: coin,
+            data: coinData,
+        }],
+        tooltip:{
+            valueSuffix: " " + curr
+        }
+
       });
 
     });
-});
-function parser(str){
-    return new Date(Date.parse(str)).getTime();
 }
