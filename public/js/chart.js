@@ -20,10 +20,6 @@ $(function () {
         console.log($(this).text())
         cryptoSelected = $(this).text()
         generateChart(cryptoSelected,currencySelected);
-        // var crypt = convertName.cryptoSelected;
-        // var curr = convertName.currencySelected;
-        // console.log("Shorthand Currency: " + curr);
-        // console.log("Shorthand Crypto: " + crypt);
    });
 });
 
@@ -32,6 +28,7 @@ function generateChart(coin, curr) {
         
         var coinData = resp.Data;    //holds the values we're interested in from api call
         console.log(resp.Data);
+        console.log(resp.Data.time);
         //var dataTimePrice = [];     //holds parsed values, used for graphing
         
         var myChart = Highcharts.chart('container2', {
@@ -44,10 +41,14 @@ function generateChart(coin, curr) {
         xAxis:{            
             type: 'datetime',
             //minRange: 3600 * 1000 * 24 * 7, // one week
+
             gridLineWidth: 1,
             resize:{
                 enabled: true,
-            }
+            },
+            dateTimeLabelFormats: {
+                day: '%e of %b'
+            },
         },
         yAxis:{
             title:'Price to USD',
@@ -57,6 +58,8 @@ function generateChart(coin, curr) {
             turboThreshold: 0,
             name: coin,
             data: coinData,
+            pointStart: Date.UTC(2010, 0, 1),
+            pointInterval: 24 * 3600 * 1000, // one day
         }],
         tooltip:{
             valueSuffix: " " + curr
