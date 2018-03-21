@@ -144,8 +144,8 @@ footer {
 }
 
 .btn {
-  font-weight: 600;
-  border-radius: 3px;
+  font-weight: 3;
+  border-radius: 20px;
 }
 
 .btn:focus {
