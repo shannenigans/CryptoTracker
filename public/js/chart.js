@@ -24,7 +24,7 @@ $(function () {
 });
 
 function generateChart(coin, curr) { 
-        $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
+        $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&allData=true', function(resp) {
         
         var coinData = resp.Data;    //holds the values we're interested in from api call
         console.log(resp.Data);
