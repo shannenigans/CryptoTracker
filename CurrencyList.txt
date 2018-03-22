@@ -1,0 +1,10 @@
+Currencies:
+
+bitcoin
+eretheum
+bitcoincash
+litecoin
+dogecoin
+icon
+enjin
+eos
