@@ -31,12 +31,15 @@ function generateChart(coin, curr) {
         console.log(resp.Data.time);
         //var dataTimePrice = [];     //holds parsed values, used for graphing
         
-        var myChart = Highcharts.chart('container2', {
+        var myChart = Highcharts.stockChart('container2', {
         chart: {
             type: 'candlestick'
         },
         title: {
             text: coin + ' Prices'
+        },
+        navigator: {
+            enabled: false
         },
         xAxis:{            
             type: 'datetime',
