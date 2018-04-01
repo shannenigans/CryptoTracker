@@ -1,28 +1,30 @@
 $(function () { 
-   var cryptoSelected = "BTC"
-   var currencySelected = "USD"
-   var convertName = {
-    "US Dollars":"USD",
-    "Euros":"EUR",
-    "Ethereum":"ETH",
-    "Bitcoin":"BTC"
-   };
-   generateChart(cryptoSelected, currencySelected)  // Generate Initial Chart
+//    var cryptoSelected = "BTC"
+//    var currencySelected = "USD"
+//    var convertName = {
+//     "US Dollars":"USD",
+//     "Euros":"EUR",
+//     "Ethereum":"ETH",
+//     "Bitcoin":"BTC"
+//    };
+//    generateChart(cryptoSelected, currencySelected)  // Generate Initial Chart
 
-   $("#currency :input").on('click',function(){
-        $(this).addClass('active').siblings().removeClass('active');
-        console.log($(this).text())
-        currencySelected = $(this).text()
-        generateChart(cryptoSelected,currencySelected);
-   });
-   $("#crypto :input").on('click',function(){
-        $(this).addClass('active').siblings().removeClass('active');
-        console.log($(this).text())
-        cryptoSelected = $(this).text()
-        generateChart(cryptoSelected,currencySelected);
-   });
-});
+//    $("#currency :input").on('click',function(){
+//         $(this).addClass('active').siblings().removeClass('active');
+//         console.log($(this).text())
+//         currencySelected = $(this).text()
+//         generateChart(cryptoSelected,currencySelected);
+//    });
+//    $("#crypto :input").on('click',function(){
+//         $(this).addClass('active').siblings().removeClass('active');
+//         console.log($(this).text())
+//         cryptoSelected = $(this).text()
+//         generateChart(cryptoSelected,currencySelected);
+//    });
+// });
 
+coin = $("a")
+generateChart(coin, "USD");
 function generateChart(coin, curr) { 
         $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
         
