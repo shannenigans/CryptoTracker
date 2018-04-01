@@ -23,7 +23,10 @@ $(function () {
 //    });
 // });
 
-coin = $("a")
+var input = document.getElementsByTagName("a");
+var coin = input[0].id;
+
+console.log("Coin: ", coin);
 generateChart(coin, "USD");
 function generateChart(coin, curr) { 
         $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
@@ -74,3 +77,4 @@ function generateChart(coin, curr) {
 
     });
 }
+});
