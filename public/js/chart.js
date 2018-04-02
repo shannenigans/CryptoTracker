@@ -30,8 +30,14 @@ function generateChart(coin, curr) {
         console.log(resp.Data);
         console.log(resp.Data.time);
         //var dataTimePrice = [];     //holds parsed values, used for graphing
+        for (var a = 0; a < resp.Data.length; a++){
+            var newTime = resp.Data[a].time * 1000;
+            resp.Data[a].time = newTime;
+        }
+        console.log(resp.Data);
+        console.log("New Time: " + resp.Data.time);
         
-        var myChart = Highcharts.chart('container2', {
+        var myChart = Highcharts.StockChart('container2', {
         chart: {
             type: 'candlestick'
         },
