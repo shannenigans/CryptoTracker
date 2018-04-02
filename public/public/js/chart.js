@@ -29,11 +29,11 @@ var coin = input[0].id;
 console.log("Coin: ", coin);
 generateChart(coin, "USD");
 function generateChart(coin, curr) { 
-        $.getJSON('https://min-api.cryptocompare.com/data/histohour?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
+        $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
         
         var coinData = resp.Data;    //holds the values we're interested in from api call
         console.log(resp.Data);
-        console.log(resp.Data[80].time);
+        console.log("First Data Point: " + resp.Data[0].time);
         //var dataTimePrice = [];     //holds parsed values, used for graphing
         for (var a = 0; a < resp.Data.length; a++){
             var newTime = resp.Data[a].time * 1000;
@@ -70,7 +70,7 @@ function generateChart(coin, curr) {
             turboThreshold: 0,
             name: coin,
             data: coinData,
-            pointStart: coinData[0].time,
+            pointStart: coinData[0].time,// Date.UTC
             pointInterval: (coinData[3].time-coinData[2].time) // one day
         }],
         tooltip:{
