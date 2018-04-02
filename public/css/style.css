@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+*, *:before, *:after{
+  box-sizing:border-box;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+ 	background: linear-gradient(to bottom, #33ccff 50%, #ff99cc 100%);
+ 	background: linear-gradient(to bottom, purple, red, orange);
+ 	background: linear-gradient(to bottom, darkblue, teal); 
+  background: linear-gradient(to bottom, #272E41, #747E98);
+}
+
+
+/* div class to center title*/
+div.thing{
+  width: 100%;
+  margin: -20 auto;
+  text-align: center; 
+  
+}
+
+/*styles for title*/
+.letter{
+
+  display: inline-block;
+  font-weight: 900;
+  font-size: 5em;
+  margin: 0.2em;
+  color: #232F4E;
+  transform-style: preserve-3d;
+  perspective: 400;
+  z-index: 1;
+}
+.letter:before, .letter:after{
+  position:absolute;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top:0;
+  left:0;
+}
+.letter, .letter:before, .letter:after{
+  transition: all 0.3s ease-in-out;
+}
+.letter:before{
+  color: #fff;
+  text-shadow: 
+    -1px 0px 1px rgba(255,255,255,.8),
+    1px 0px 1px rgba(0,0,0,.8);
+  z-index: 3;
+  transform:
+    rotateX(0deg)
+    rotateY(-15deg)
+    rotateZ(0deg);
+}
+.letter:after{
+  color: rgba(0,0,0,.11);
+  z-index:2;
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    skew(0deg,1deg);
+}
+.letter:hover:before{
+  color: #fafafa;
+  transform:
+    rotateX(0deg)
+    rotateY(-40deg)
+    rotateZ(0deg);
+}
+.letter:hover:after{
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(40deg)
+    rotateZ(0deg)
+    skew(0deg,22deg);
+}
+
+.navbar{
+  margin-top: 105px;
+  overflow: hidden; /*if page gets cropped */
+  /*background-color: #333;  - background color for nav bar */
+  position: fixed;  /*navbar stays even if page is scrolled */
+  
+
+  top: 0;
+  width: 100%;
+  margin 0: auto;
+  text-decoration: none;
+}
+
+/* .navbar a{ */
+.navbar a{
+
+  float: right;    /*buttons float to left*/
+  left: -40%;
+  text-align: left;
+  position: relative;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;   /*distance between tabs */
+  text-decoration: none;
+  font-size: 35px       /*size of tabs */
+
+}
+
+/*when hovering over navbar buttons*/
+.navbar a:hover{
+  background: #ddd;
+  color: black;
+}
+
+.deepshd {
+  color: #e0dfdc;
+  letter-spacing: .1em;
+  font-family: roboto;
+}

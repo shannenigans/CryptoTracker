@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- <base href="./"> -->
-	<link rel="stylesheet" type="text/css" href="bootstrap.css">
-	<title>CryptoContext</title>
-	
- <!-- The below three scripts are for chart generation -->
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://code.highcharts.com/stock/highstock.js"></script>
-  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <head>
+        <title>CryptoTracker</title>
+        <div class="thing" class="container">
+        <h1 id="title" class ="letter" data-letter="Enjin">Enjin</h1>
+        </div>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<style type="text/css">
-	.title{
-		text-align: center;
-		font-size: 50px;
-		border-bottom-style: solid;
-		cursor: pointer;
-	}
-	.a:hover{
-		background-color: lightgrey;
-	}
-</style>
-	<div class="title a" onclick="window.location.href='homepage.html'">CryptoContext</div>
-	<div class ="container">
-	<div class="row" style="border-bottom-style: solid;">
-	<div class="col-lg-3 col-md-3 btn btn-default" style="cursor: pointer;" onclick="window.location.href='litecoin.html'">Litecoin</div>
-	<div class="col-lg-3 col-md-3 btn btn-default" style="cursor: pointer;" onclick="window.location.href='ethereum.html'">Ethereum</div>
-	<div class="col-lg-3 col-md-3 btn btn-default" style="cursor: pointer;" onclick="window.location.href='bitcoin.html'">Bitcoin</div>
-	<div class="col-lg-3 col-md-3 btn btn-default" style="cursor: pointer;" onclick="window.location.href='dogecoin.html'">Dogecoin</div>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+        
+    </head>
+    <body>
+
+    <script type="text/javascript" src="js/chart.js"></script>
+
+
+<div class="thing">
+  <navbar class="animated fadeIn">
+    <c onClick="window.location.href='bitcoin.html'"><button type="button" class="btn btn-info btn-xs">Bitcoin</button></c>
+    <c onClick="window.location.href='ethereum.html'"><button type="button" class="btn btn-info btn-xs">Ethereum</button></c>
+    <c onClick="window.location.href='bitcoincash.html'"><button type="button" class="btn btn-info btn-xs">Bitcoin Cash</button></c>
+    <c onClick="window.location.href='litecoin.html'"><button type="button" class="btn btn-info btn-xs">Litecoin</button></c>
+    <c onClick="window.location.href='dogecoin.html'"><button type="button" class="btn btn-info btn-xs">Dogecoin</button></c>
+    <c onClick="window.location.href='enjin.html'"><button type="button" class="btn btn-info btn-xs active">Enjin</button></c>
+    <c onClick="window.location.href='icon.html'"><button type="button" class="btn btn-info btn-xs">Icon</button></c>
+    <c onClick="window.location.href='eos.html'"><button type="button" class="btn btn-info btn-xs">EOS</button></c>
+
+</navbar>
 </div>
-</div>
-<div class ="container">
-	<div class="row" style="border-bottom-style: solid;">
-	<div class="col-lg-4 col-md-4 btn btn-default" style="cursor: pointer;" onclick="window.location.href='bitcoincash.html'">Bitcoin Cash</div>
-	<div class="col-lg-4 col-md-4 btn btn-default" style="cursor: pointer;" onclick="window.location.href='eos.html'">EOS</div>
-	<div class="col-lg-4 col-md-4 btn btn-default" style="cursor: pointer;" onclick="window.location.href='icon.html'">Icon</div></div>
-</div>
-</head>
-<body>
-<div class ="container">
-	<div class="row">
-		<div class="col-lg-12" style="margin-bottom: 35px;">  </div>
-		<div><img class="col-lg-3" src="logos/enjin.jpg"></div>
-		<div class="col-lg-8 col-md-6" style="font-size: 200px; text-align: center;">Enjin</div>
-	</div>
-</div>
+   <br>
 
-<a id="ENJ"></a>
-<div id="container2"></div>
+   <a id="ENJ"></a>
+   <div class="container">
+    <div class="animated fadeIn row" style="height: 60vh">
+    <div class="col-md-8" id="container2"></div>
+        <div class="col-md-4" style="color: white">Enjin Coin (ENJ) is a popular cryptocurrency between multiple gaming platforms that implements it, bringing portability as well as transferability of virtual goods and digital assets between the gaming platforms.
+        </div>
+    </div>
+    </div>
+    
 
-<script src="public/js/chart.js" type="text/javascript"></script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<h1>&emsp;</h1>
+        <!-- The below three scripts are for chart generation -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 
-</body>
+        <script src="js/chart.js" type="text/javascript"></script>
+
+
+    </body>
+
+
+
+
+
 </html>
