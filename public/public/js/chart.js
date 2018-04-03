@@ -39,14 +39,51 @@ function generateChart(coin, curr) {
             var newTime = resp.Data[a].time * 1000;
             coinData[a].time = newTime;
         }
+        //CHART THEMES
+        Highcharts.theme = {
 
+            colors: ['#747E98', '#2E364B', '#272E41', '#232F4E', '#131F42'],
+            
+            chart: {
+                backgroundColor: {
+                    linearGradient: [0, 0, 500, 500],
+                    stops: [
+                        [0, 'rgb(255, 255, 255)'],
+                        [1, 'rgb(245, 245, 245)']
+                    ]
+                },
+            },
+            title: {
+                style: {
+                    color: '#000',
+                    font: 'bold 16px "Roboto", Verdana, sans-serif'
+                }
+            },
+            subtitle: {
+                style: {
+                    color: '#666666',
+                    font: 'bold 12px "Roboto", Verdana, sans-serif'
+                }
+            },
+
+            legend: {
+                itemStyle: {
+                    font: '9pt Roboto, Verdana, sans-serif',
+                    color: 'black'
+                },
+                itemHoverStyle:{
+                    color: 'gray'
+                }   
+            }
+        };
+        Highcharts.setOptions(Highcharts.theme);
         var myChart = Highcharts.stockChart('container2', {
         chart: {
             type: 'candlestick'
         },
-        title: {
-            text: coin + ' Prices'
-        },
+        // title: {
+        //     text: coin + ' Prices'
+        // },
         navigator: {
             enabled: false
         },
