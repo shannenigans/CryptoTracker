@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+           <link rel="stylesheet" href="css/main.css">
         
     </head>
     <body>
@@ -38,8 +39,17 @@
    <a id="BTC"></a>
    <div class="container">
     <div class="animated fadeIn row" style="height: 60vh">
-    <div class="col-md-8" id="container2"></div>
-        <div class="col-md-4" style="color: white">Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.
+    <div class="dropdown col-md-1">
+          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#" onclick="getName(this)">US Dollars</a>
+            <a href="#" onclick="getName(this)">Euros</a>
+            <a href="#" onclick="getName(this)">Yen</a>
+            <a href="#" onclick="getName(this)">Pounds</a>
+          </div>
+        </div> 
+    <div class="col-md-7" id="container2"></div>
+        <div class="col-md-4" style="color: white">General Consumer tone: <j style="color:#32CD32;">58.6% Joy</j><br><j style="color:#ADD8E6">53.2% Sadness</j><br>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.
         </div>
     </div>
     </div>
