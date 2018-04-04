@@ -1,6 +1,13 @@
 function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");  
+}
+function getName(obj) {
+    var t = $(obj).text();
+    console.log(t);
+
     document.getElementById("myDropdown").classList.toggle("show");
-    console.log(document.getElementById("myDropdown").classList);
+    //console.log(document.getElementById("myDropdown"));
+    
 }
 
 // Close the dropdown menu if the user clicks outside of it
