@@ -92,6 +92,7 @@ window.onclick = function(event) {
 
 console.log("Coin: ", coin);
 generateChart(coin, curr);
+dispCurrentPrice("priceBlock",coin, curr);
 function generateChart(coin, curr) { 
         $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
         
