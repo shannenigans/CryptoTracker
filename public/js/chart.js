@@ -2,6 +2,7 @@
 var curr = 'USD';
 var input = document.getElementsByTagName("a");
 var coin = input[0].id;
+var priceElement = $("#priceBlock")
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");  
@@ -17,16 +18,22 @@ function getName(obj) {
     else{
         curr = nameToAbbreviation(t);
         generateChart(coin, curr);
-        dispCurrentPrice("priceBlock",coin, curr);
+        dispCurrentPrice(coin, curr);
         console.log("Currency Abbreviated: " + curr);
     };
     document.getElementById("myDropdown").classList.toggle("show");
     //console.log(document.getElementById("myDropdown")); 
 };
-function dispCurrentPrice(id,coin,currency){
-    var priceTxt = document.getElementById(id);
+function dispCurrentPrice(coin,currency){
+    //var priceTxt = document.getElementById(id).innterText;
+    //var priceTxt = priceElement.text();  
+    console.log("Price text: " + priceElement.text());
+
+    //console.log("in disp Current Price, id: " + id + "coin: " + coin + "currency: " + currency)
     $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + coin + '&tsyms=' + currency, function(resp){
-        priceTxt.value = currency_symbols[coin] + resp[coin];
+        console.log("Coin " + coin);
+        console.log(resp["USD"])
+        priceElement.text(currency_symbols[currency] + "" + resp[currency]);
     });
 }
 
@@ -92,7 +99,7 @@ window.onclick = function(event) {
 
 console.log("Coin: ", coin);
 generateChart(coin, curr);
-dispCurrentPrice("priceBlock",coin, curr);
+dispCurrentPrice(coin, curr);
 function generateChart(coin, curr) { 
         $.getJSON('https://min-api.cryptocompare.com/data/histoday?fsym=' + coin + '&tsym=' + curr + '&limit=180&aggregate=3&e=CCCAGG', function(resp) {
         
