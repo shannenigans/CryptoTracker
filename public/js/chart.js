@@ -3,7 +3,7 @@ var curr = 'USD';
 var input = document.getElementsByTagName("a");
 var coin = input[0].id;
 var priceElement = $("#priceBlock")
-
+var percDifferent = $("#percentChange")
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");  
 };
@@ -92,6 +92,21 @@ window.onclick = function(event) {
     }
   }
 } 
+function showPercDiff(now, earlier){
+    console.log("Now: " + now + " earlier " + earlier);
+    var percent = ((now - earlier)/(earlier) * 100).toFixed(3);
+    var up = '&#9650' + percent + '%';
+    var down  = '&#9660' + percent + '%';
+
+    if (percent >= 0){
+        percDifferent.html(up);
+        percDifferent.css('color', 'green');
+    }
+    else{
+        percDifferent.html(down);
+        percDifferent.css('color', 'red');
+    }
+}
 //$(function () { 
 
 // var input = document.getElementsByTagName("a");
@@ -111,16 +126,18 @@ function generateChart(coin, curr) {
             var newTime = resp.Data[a].time * 1000;
             coinData[a].time = newTime;
         }
-
+        
+        showPercDiff(resp.Data[resp.Data.length-1].close, resp.Data[resp.Data.length - 2].close);
+        
         var myChart = Highcharts.stockChart('container2', {
         chart: {
-            type: 'candlestick'
+            type: 'candlestick',
         },
         // title: {
         //     text: coin + ' Prices'
         // },
         navigator: {
-            enabled: false
+            enabled: false,
         },
         xAxis:{            
             type: 'datetime',
@@ -135,7 +152,9 @@ function generateChart(coin, curr) {
             },
         },
         yAxis:{
-            title:'Price to USD',
+            title: {
+                text: "Price in: " + curr
+            },
             floor:0,
         },
         series: [{
