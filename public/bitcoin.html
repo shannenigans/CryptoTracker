@@ -3,7 +3,7 @@
     <head>
         <title>CryptoTracker</title>
         <div class="thing" class="container">
-        <h1 id="title" class ="letter" data-letter="Bitcoin"><div id="priceBlock"></div>Bitcoin</h1>
+        <h1 id="title" class ="letter" data-letter="Bitcoin">Bitcoin</h1>
         </div>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -39,18 +39,25 @@
 
    <a id="BTC"></a>
    <div class="container">
-    <div class="animated fadeIn row" style="height: 60vh">
+    <div class="animated fadeIn row btn-group" style="height: 60vh">
     <div class="dropdown col-md-1">
           <button onclick="myFunction()" class="dropbtn">Currency<i class="fas fa-chevron-down"></i></button>
           <div id="myDropdown" class="dropdown-content">
             <a href="#" onclick="getName(this)">US Dollars</a>  
             <a href="#" onclick="getName(this)">Euros</a>
             <a href="#" onclick="getName(this)">Yen</a>
-            <a href="#" onclick="getName(this)">Pounds</a>
+            <a href="#" onclick="getName(this)">British Pounds</a>
+            <a href="#" onclick="getName(this)">Costa Rican Colóns</a>
+            <a href="#" onclick="getName(this)">Israeli New Sheqels</a>
+            <a href="#" onclick="getName(this)">Indian Rupees</a>
+            <a href="#" onclick="getName(this)">South Korean Won</a>
+            <a href="#" onclick="getName(this)">Thai Baht</a>
+            <a href="#" onclick="getName(this)">Ukrainian Hryvnia</a>
+            <a href="#" onclick="getName(this)">Vietnamese Dong</a>
           </div>
         </div> 
-    <div class="col-md-7" id="container2"></div>
-        <div class="col-md-4" style="color: white">GENERAL CONSUMER TONE:<br><j style="color:#32CD32;">58.6% JOY</j><br><j style="color:#ADD8E6">53.2% SADNESS</j><br><br>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.
+    <div class="col-md-6" id="container2"></div>
+        <div class="col-md-5" style="color: white"><b style="font-size: 20px;">CURRENT PRICE:<br><div style="color:#32CD32" id="priceBlock"></div><div id="percentChange"></div>GENERAL CONSUMER TONE:<br><j style="color:#FFFF4C;">58.6% JOY</j><br><j style="color:#ADD8E6">53.2% SADNESS</b></j><br><br>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Although other cryptocurrencies have come before, Bitcoin is the first decentralized cryptocurrency - Its reputation has spawned copies and evolution in the space.
         </div>
     </div>
     </div>
