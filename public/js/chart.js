@@ -17,11 +17,18 @@ function getName(obj) {
     else{
         curr = nameToAbbreviation(t);
         generateChart(coin, curr);
+        dispCurrentPrice("priceBlock",coin, curr);
         console.log("Currency Abbreviated: " + curr);
     };
     document.getElementById("myDropdown").classList.toggle("show");
     //console.log(document.getElementById("myDropdown")); 
 };
+function dispCurrentPrice(id,coin,currency){
+    var priceTxt = document.getElementById(id);
+    $.getJSON('https://min-api.cryptocompare.com/data/price?fsym=' + coin + '&tsyms=' + currency, function(resp){
+        priceTxt.value = currency_symbols[coin] + resp[coin];
+    });
+}
 
 var currency_symbols = {
     'USD': '$', // US Dollar
